@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import IndigoLearn from './components/IndigoLearn'
+import ChooseUs from './components/ChooseUs'
+import LearnWithACCA from './components/LearnWithACCA'
+import Placement from './components/Placement'
+import StartJourneyWithUs from './components/StartJourneyWithUs'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<IndigoLearn />} />
+      <Route path="/why-choose-us" element={<ChooseUs />} />
+      <Route path="/learning-with-ACCA" element={<LearnWithACCA />} />
+      <Route path="/placement" element={<Placement />} />
+      <Route path="/journey" element={<StartJourneyWithUs />} />
+    </Routes>
+  </Router>
+)
 
-export default App;
+export default App
